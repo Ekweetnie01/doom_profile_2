@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Your Arsenal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Doom Slayer</h1>
+  </header>
+  <main class="card-layout">
+    <section class="weapon-arsenal card">
+      <h2>Choose Your Arsenal</h2>
+      <div class="weapon-grid" id="weapon-grid">
+        <!-- Weapons will be generated dynamically -->
+      </div>
+      <div class="selected-weapon" id="selected-weapon">
+        <h3>Selected Weapon</h3>
+        <div id="weapon-details">Choose a weapon to see details</div>
+      </div>
+      <button id="continue-to-creation" class="start-button">Continue to Creation</button>
+    </section>
+  </main>
+
+  <!-- Template for a single weapon card for efficient cloning -->
+  <template id="weapon-card-template">
+    <div class="weapon-card">
+      <img src="" alt="">
+      <p></p>
+    </div>
+  </template>
+  <script src="dom-enhanced.js"></script>
+  <script src="arsenal.js"></script>
+</body>
+</html>

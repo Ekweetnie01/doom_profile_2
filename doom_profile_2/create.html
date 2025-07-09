@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <title>Create your Slayer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Doom Slayer</h1>
+  </header>
+ 
+  <main class="card-layout">
+    <section class="profile card">
+      <h2>Example</h2>
+      <img src="public/doom_guy.png" alt="Doom Slayer">
+      <p>The Doom Slayer is a legendary warrior who battles the forces of Hell.</p>
+    </section>
+ 
+    <section class="profile-manager card">
+      <h2>Slayer Profiles</h2>
+      <div class="profile-actions">
+        <div class="save-section">
+          <input type="text" id="profile-name" placeholder="Profile Name" maxlength="20">
+          <button id="save-profile" class="profile-btn">Save Profile</button>
+        </div>
+        <div class="load-section">
+          <select id="profile-selector">
+            <option value="">Select a profile...</option>
+          </select>
+          <button id="load-profile" class="profile-btn">Load Profile</button>
+          <button id="delete-profile" class="profile-btn delete">Delete</button>
+        </div>
+      </div>
+      <div class="saved-profiles">
+        <h4>Saved Profiles:</h4>
+        <div class="profiles-list" id="profiles-list">
+          No profiles saved yet.
+        </div>
+      </div>
+      <div class="profile-preview">
+        <h4>Profile Preview:</h4>
+        <div class="preview-content" id="preview-content">Select a profile to preview</div>
+      </div>
+    </section>
+ 
+    <div class="container card">
+      <h1>Create your Slayer</h1>
+      <img src="https://upload.wikimedia.org/wikipedia/en/5/57/Doom_Slayer_2020.jpg" alt="Your Slayer" class="doom-img">
+      <p>Creating character for: <strong id="display-username">Slayer</strong></p>
+      <p>Weapon of Choice: <strong id="display-weapon">None Selected</strong></p>
+      <p>Fill out the details below to complete your character.</p>
+ 
+      <form novalidate>
+        <label for="name">Name your Character</label>
+        <input type="text" id="name" placeholder="Your Slayer's Name">
+ 
+        <p>Your Slayer's Age</p>
+        <input type="radio" name="age" value="19-25" id="option-1">
+        <label for="option-1">19 - 25</label>
+        <input type="radio" name="age" value="26-45" id="option-2">
+        <label for="option-2">26 - 45</label>
+        <input type="radio" name="age" value="50+" id="option-3">
+        <label for="option-3">50+</label>
+ 
+        <label for="gender">Gender</label>
+        <select name="gender" id="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+ 
+        <label for="bio">Describe your Slayer:</label>
+        <textarea name="Bio" id="bio" cols="30" rows="10" placeholder="My slayer is male, athletically built, etc.."></textarea>
+ 
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
+    <section class="live-stats card">
+      <h2>Slayer Stats Preview</h2>
+      <div class="stats-container">
+        <div class="stat-item">
+          <label>Strength:</label>
+          <div class="stat-bar">
+            <div class="stat-fill" id="strength-fill"></div>
+          </div>
+          <span id="strength-value">0</span>
+        </div>
+        <div class="stat-item">
+          <label>Speed:</label>
+          <div class="stat-bar">
+            <div class="stat-fill" id="speed-fill"></div>
+          </div>
+          <span id="speed-value">0</span>
+        </div>
+        <div class="stat-item">
+          <label>Experience:</label>
+          <div class="stat-bar">
+            <div class="stat-fill" id="experience-fill"></div>
+          </div>
+          <span id="experience-value">0</span>
+        </div>
+      </div>
+      <div class="total-power">
+        <strong>Total Power Level: <span id="total-power-value">0</span>/300</strong>
+        <p id="live-motivation" class="motivation"></p>
+      </div>
+    </section>
+
+    <section class="created-slayers card">
+      <h2>Registered Slayers</h2>
+      <div id="slayers-container">
+        <!-- Dynamically generated slayer cards will appear here -->
+      </div>
+    </section>
+
+    <section class="battle-demo card">
+      <h2>Battle Simulator</h2>
+      <div class="battle-arena-sim">
+        <!-- Slayer Side -->
+        <div class="fighter-side">
+          <div class="character-display" id="slayer-display">
+            <h3 id="slayer-name-display">Your Slayer</h3>
+            <div class="health-bar-sim">
+              <div class="health-fill-sim" id="slayer-health"></div>
+            </div>
+            <div class="stats-mini" id="slayer-stats-mini">
+              <!-- JS can populate stats here -->
+            </div>
+          </div>
+        </div>
+        <!-- Controls -->
+        <div class="battle-controls-sim">
+          <button id="start-battle" class="battle-btn">Start Battle</button>
+          <button id="use-weapon" class="battle-btn" disabled>Attack</button>
+          <button id="use-ability" class="battle-btn" disabled>Special</button>
+          <button id="reset-battle" class="battle-btn">Reset</button>
+        </div>
+        <!-- Enemy Side -->
+        <div class="fighter-side">
+          <div class="character-display" id="enemy-display">
+            <h3 id="enemy-name">Select Enemy</h3>
+            <div class="health-bar-sim">
+              <div class="health-fill-sim enemy" id="enemy-health"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="battle-log-sim">
+        <h4>Battle Log</h4>
+        <div class="log-content" id="log-content">Ready for battle...</div>
+      </div>
+      <div class="enemy-selector">
+        <h4>Choose Your Enemy:</h4>
+        <div class="enemy-grid" id="enemy-grid"><!-- JS will populate this --></div>
+      </div>
+    </section>
+  </main>
+
+  <template id="slayer-card-template">
+    <div class="slayer-card">
+      <h3 class="slayer-name"></h3>
+      <p class="slayer-weapon"></p>
+      <p class="slayer-bio"></p>
+      <div class="slayer-stats"></div>
+    </div>
+  </template>
+  <script src="dom-enhanced.js"></script>
+  <script src="slayer-script.js"></script>
+  <script src="profile-manager.js"></script>
+  <script src="battle-simulator.js"></script>
+</body>
+</html>

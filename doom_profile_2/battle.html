@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rip and Tear!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="battle-page">
+  <main class="battle-arena">
+    <h1>BATTLE ARENA</h1>
+
+    <div class="fighters-container">
+      <!-- Slayer -->
+      <div id="slayer-fighter" class="character-container">
+        <h2 id="slayer-name">Slayer</h2>
+        <div class="health-bar-container">
+          <div id="slayer-health-bar" class="health-bar-fill"></div>
+        </div>
+        <p><span id="slayer-hp">100</span> / 100 HP</p>
+        <div class="character-sprite">
+            <img src="public/doom-slayer-sprite.png" alt="Doom Slayer">
+        </div>
+      </div>
+
+      <!-- Demon -->
+      <div id="demon-fighter" class="character-container">
+        <h2 id="demon-name">Imp</h2>
+        <div class="health-bar-container">
+          <div id="demon-health-bar" class="health-bar-fill"></div>
+        </div>
+        <p><span id="demon-hp">80</span> / 80 HP</p>
+        <div class="character-sprite">
+            <img src="public/imp-sprite.png" alt="Imp Demon">
+        </div>
+      </div>
+    </div>
+
+    <div class="battle-controls card">
+      <div id="battle-actions" class="battle-actions">
+        <button id="attack-btn" class="battle-button">Attack</button>
+        <button id="special-attack-btn" class="battle-button">BFG Blast</button>
+        <button id="heal-btn" class="battle-button">Find Health</button>
+      </div>
+      <div id="battle-log" class="battle-log">
+      </div>
+    </div>
+  </main>
+  <script src="battle.js"></script>
+</body>
+</html>
